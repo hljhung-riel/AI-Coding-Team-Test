@@ -6,7 +6,7 @@ be run directly from the repository root with:
     python -m unittest tests.test_text_utils -v
 
 Import strategy
---------------
+---------------
 The project has no packages, installable distribution, or configured
 ``sys.path`` hints, and the module lives one directory below the repository
 root (``src/text_utils.py``). To keep the imports robust regardless of how
@@ -70,7 +70,7 @@ class TestNormalizeWhitespaceValidInput(unittest.TestCase):
         """Newline characters are replaced with single spaces."""
         self.assertEqual(normalize_whitespace("a\nb\nc"), "a b c")
 
-    def test_carriage:return_replaced_with_single_space(self):
+    def test_carriage_return_replaced_with_single_space(self):
         """Carriage returns are replaced with single spaces."""
         self.assertEqual(normalize_whitespace("a\rb\rc"), "a b c")
 
@@ -98,7 +98,7 @@ class TestNormalizeWhitespaceValidInput(unittest.TestCase):
         self.assertEqual(result, "b a c ba")
         self.assertEqual(result.index("b"), 0)
 
-    def test_repeated_word_separators_do_not_merge_tokens(self):
+    def test_repeated_whitespace_between_tokens_preserves_all_tokens(self):
         """Separated tokens stay distinct; no characters are dropped."""
         self.assertEqual(normalize_whitespace("x      y     z"), "x y z")
 
