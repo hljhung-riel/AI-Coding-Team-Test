@@ -19,7 +19,7 @@ def normalize_whitespace(text: str) -> str:
     Examples:
         >>> normalize_whitespace("  Hello   world!  ")
         'Hello world!'
-        >>> normalize_whitespace("a\\tb\\nc")
+        >>> normalize_whitespace("a\tb\nc")
         'a b c'
 
     Args:
@@ -27,7 +27,7 @@ def normalize_whitespace(text: str) -> str:
 
     Returns:
         The cleaned string. Empty strings and strings containing only
-        whitespace (e.g. "   \\t\\n") return an empty string.
+        whitespace (e.g. spaces/tabs/newlines) return an empty string.
 
     Raises:
         TypeError: If ``text`` is not a ``str`` (e.g. ``None``, ``int``,
