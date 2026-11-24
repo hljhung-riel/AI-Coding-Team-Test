@@ -82,7 +82,7 @@ class TestNormalizeWhitespaceValidInput(unittest.TestCase):
         """Runs mixing spaces, tabs, newlines, and CRs collapse to one space."""
         mixed = "  Hello   world\t!\n\t Python\t\r\n/ws  "
         self.assertEqual(
-            normalize_whitespace(mixed), "Hello world! Python/ws"
+            normalize_whitespace(mixed), "Hello world ! Python /ws"
         )
 
     def test_multiline_paragraph_collapsed_to_one_line(self):
